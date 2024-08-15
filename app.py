@@ -2,16 +2,10 @@ import streamlit as st
 from streamlit_image_select import image_select
 
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image
 import torch
-import torch.nn.functional as F
-from pytorch_grad_cam import GradCAM
 from pytorch_grad_cam.utils.image import show_cam_on_image
-from torchvision import transforms, models
-from torchvision.models import ResNet152_Weights
-from ultralytics import YOLO
 from stqdm import stqdm
-import matplotlib.cm as cm
 import io
 from utils import *
 import os
@@ -44,7 +38,7 @@ def show_terms_modal():
         """)
     st.write("""В сервис **:red[запрещено]** загружать изображения, содержащие персональные данные пациента (ФИО, дата рождения). 
         """)
-    st.write("""Исследования, загруженные в веб сервис будут сохраняться и использоваться для улучшения качества данной модели. 
+    st.write("""Исследования, загруженные в веб-сервис, будут сохраняться и использоваться для улучшения качества данной модели. 
         """)
     st.write("""**:red[Результат работы сервиса не является диагнозом, за консультацией обратитесь к врачу.]**
              """)
@@ -115,7 +109,7 @@ else:
 
     # Текстовое поле для ввода или отображения текста
     st.markdown("Представленный алгоритм на основе ИИ направлен на детектирование спектра патологий центральной нервной системы (в том числе Спина бифида) на эхографических снимках головного мозга плода в первом триместре беременности. Для проведения анализа необходимо загрузить один или несколько ключевых снимков.")
-    st.markdown("После получения результатов анализа оставьте пожалуйста обратную связь.")
+    st.markdown("После получения результатов анализа оставьте, пожалуйста, обратную связь.")
 
 # Примеры изображений для выбора
     example_images = {
@@ -123,18 +117,11 @@ else:
         "Example 2": "example_images/1000296489-2023-06-27-1.2.276.0.26.1.1.1.2.2023.213.29514.2326243.24903680.jpg",
         "Example 3": "example_images/16-2019-01-23-1.2.276.0.26.1.1.1.2.2019.54.44657.1324061.24903680.jpg",
         "Example 4": "example_images/16-2019-01-23-1.2.276.0.26.1.1.1.2.2019.54.44854.1507069.24903680.jpg"
-    }
-    
-    # # Элемент для выбора примеров изображений
-    # if 'is_files_uploaded' not in st.session_state:
-    #     st.session_state['is_files_uploaded'] = False
-    
-    # if not st.session_state['is_files_uploaded']:
-        
+    }   
     
     # Элемент для загрузки файлов
     uploaded_files = st.file_uploader(
-        label="Загрузите не более 2 изображений (желательно 2 ключевых кадра одго исследования в аксиальной и сагиттальной плоскости):", 
+        label="Загрузите не более 2 изображений (желательно 2 ключевых кадра одного исследования в аксиальной и сагиттальной плоскости):", 
         type=["png", "jpg", "jpeg"], 
         accept_multiple_files=True, 
         label_visibility='visible'
