@@ -113,10 +113,10 @@ else:
 
 # Примеры изображений для выбора
     example_images = {
-        "Example 1": "example_images/1000296450-2022-04-26-1.2.392.200036.9116.6.18.18512132.6075.20220426095755355.3.280.jpg",
-        "Example 2": "example_images/1000296489-2023-06-27-1.2.276.0.26.1.1.1.2.2023.213.29514.2326243.24903680.jpg",
-        "Example 3": "example_images/16-2019-01-23-1.2.276.0.26.1.1.1.2.2019.54.44657.1324061.24903680.jpg",
-        "Example 4": "example_images/16-2019-01-23-1.2.276.0.26.1.1.1.2.2019.54.44854.1507069.24903680.jpg"
+        "Example 1": "example_images/norm-sagittal.jpg",
+        "Example 2": "example_images/norm-axial.jpg",
+        "Example 3": "example_images/patology-sagittal.jpg",
+        "Example 4": "example_images/patology-axial.jpg"
     }   
     
     # Элемент для загрузки файлов
@@ -187,7 +187,8 @@ else:
     else:
         example_img = image_select(
             label="Или посмотрите примеры:",
-            images=list(example_images.values())
+            images=list(example_images.values()),
+            captions=["Норма (сагиттальная)", "Норма (аксиальная)", "Патология (сагиттальная)", "Патология (аксиальная)"]
         )
         process_example_files(list(example_images.values()))
     
