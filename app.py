@@ -132,7 +132,7 @@ else:
         uploaded_files = uploaded_files[:2]
     
     # Настройка модели и обработка изображений
-    @st.cache_data
+    @st.cache_resource(show_spinner = "Загрузка модели ...")
     def get_processor():
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         return MedicalImageProcessor(
@@ -149,7 +149,7 @@ else:
     if 'feedback' not in st.session_state:
         st.session_state['feedback'] = {}
     
-    @st.cache_data
+    @st.cache_data(show_spinner = "Обработка изображения ...", ttl = 3600, max_entries = 10)
     def cache_process_image(img_bytes, img_name):
         return processor.process_image(img_bytes, img_name)
     
