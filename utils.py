@@ -62,7 +62,7 @@ class MedicalImageProcessor:
         
         return model
         
-    def object_detection(self, img, conf=0.05):
+    def object_detection(self, img, conf=0.1):
         predictions = self.yolo_model.predict(img, verbose=False, conf=conf)[0]
         if predictions.boxes.shape[0] == 0:
             return None, None, None  # Возвращаем значения None, если объекты не обнаружены
