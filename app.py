@@ -182,6 +182,7 @@ else:
                 st.session_state['imgs'][img_name] = img
                 st.session_state['processed_images'][img_name] = result
     
+
     if uploaded_files:
         process_uploaded_files(uploaded_files)
     else:
@@ -202,6 +203,11 @@ else:
             option = st.selectbox('Выберите конкретный снимок:', options, label_visibility='collapsed')
             if option:
                 st.image(imgs[option], caption='Выбранное изображение', use_column_width=True)
+                col3, col4 = st.columns(2)
+                with col3:
+                    st.metric(label="Корректность", value=int(processed_images[option]["quality"]["prediction_prob"]*100))
+                with col4:
+                    st.metric(label="Патология", value=int(processed_images[option]["pathology"]["prediction_prob"]*100))
         
         with col2:
             if option:
@@ -239,6 +245,11 @@ else:
             option = st.selectbox('Выберите конкретный снимок:', options, label_visibility='collapsed', disabled=True)
             if option:
                 st.image(imgs[str(example_img)], caption='Выбранное изображение', use_column_width=True)
+                col3, col4 = st.columns(2)
+                with col3:
+                    st.metric(label="Корректность", value=int(processed_images[str(example_img)]["quality"]["prediction_prob"]*100))
+                with col4:
+                    st.metric(label="Патология", value=int(processed_images[str(example_img)]["pathology"]["prediction_prob"]*100))
     
         with col2:
             if option:
