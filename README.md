@@ -57,6 +57,8 @@ BUCKET=...
 streamlit run app.py
 ```
 
+---
+
 © 2024 ООО "Яндекс" / Yandex LLC
 
 Программное обеспечение предоставляется на условиях лицензии - Стандартная общественная лицензия GNU Афферо версии 3.0 / The program is distributed under the terms of the GNU Affero General Public License.
