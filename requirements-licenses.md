@@ -1,0 +1,78 @@
+The PyPI packages from the requirements.txt are distributed under following license agreements:
+
+- **altair** - [link](https://pypi.org/pypi/altair/): (c) Vega-Altair Developers; License : BSD 3-Clause License 
+- **attrs** - [link](https://pypi.org/pypi/attrs/): (c) Hynek Schlawack and the attrs contributors; License : MIT License
+- **blinker** - [link](https://pypi.org/pypi/blinker/): (c) Jason Kirtland; License : MIT License
+- **boto3** - [link](https://pypi.org/pypi/boto3/): (c) Amazon.com, Inc. or its affiliates. All Rights Reserved; License : Apache License 2.0
+- **botocore** - [link](https://pypi.org/pypi/botocore/): (c) Amazon.com, Inc. or its affiliates. All Rights Reserved; License : Apache License 2.0
+- **cachetools** - [link](https://pypi.org/pypi/cachetools/): (c) Thomas Kemmer; License :  MIT
+- **certifi** - [link](https://pypi.org/pypi/certifi/): (с) Certifi developers; License : MPL-2.0
+- **charset-normalizer** - [link](https://pypi.org/pypi/charset-normalizer/): (c) 2019 TAHRI Ahmed R.; License : MIT
+- **click** - [link](https://pypi.org/pypi/click/): (c) Pallets; License : BSD-3-Clause
+- **contourpy** - [link](https://pypi.org/pypi/contourpy/): (c) ContourPy Developers; License : BSD 3-Clause 
+- **cycler** - [link](https://pypi.org/pypi/cycler/): (c) matplotlib project; License :  BSD 3-Clause 
+- **filelock** - [link](https://pypi.org/pypi/filelock/): License : The Unlicense
+- **fonttools** - [link](https://pypi.org/pypi/fonttools/): (c) Just van Rossum; License : MIT
+- **fsspec** - [link](https://pypi.org/pypi/fsspec/): (c) Martin Durant; License : BSD 3-Clause  
+- **gitdb** - [link](https://pypi.org/pypi/gitdb/): (c) Sebastian Thiel and contributors; License : BSD 3-Clause
+- **GitPython** - [link](https://pypi.org/pypi/GitPython/): (C) Michael Trier and contributors; License : BSD 3-Clause
+- **grad-cam** - [link](https://pypi.org/pypi/grad-cam/):  (c) Jacob Gildenblat; License : MIT License
+- **idna** - [link](https://pypi.org/pypi/idna/): (c) Kim Davies and contributors; License : BSD 3-Clause
+- **Jinja2** - [link](https://pypi.org/pypi/Jinja2/): (c) Pallets; License : BSD 3-Clause
+- **jmespath** - [link](https://pypi.org/pypi/jmespath/): (c) Amazon.com, Inc. or its affiliates; License : MIT
+- **joblib** - [link](https://pypi.org/pypi/joblib/): (c) The joblib developers; License : BSD 3-Clause
+- **jsonschema** - [link](https://pypi.org/pypi/jsonschema/): (c) Julian Berman; License : MIT
+- **jsonschema-specifications** - [link](https://pypi.org/pypi/jsonschema-specifications/): (c) Julian Berman; License : MIT
+- **kiwisolver** - [link](https://pypi.org/pypi/kiwisolver/): (c) Nucleic Development Team; License : BSD 3-Clause
+- **markdown-it-py** - [link](https://pypi.org/pypi/markdown-it-py/): (c) ExecutableBookProject; License : MIT License
+- **MarkupSafe** - [link](https://pypi.org/pypi/MarkupSafe/): (c) Pallets; License : BSD-3-Clause
+- **matplotlib** - [link](https://pypi.org/pypi/matplotlib/): (c) Maptolib Development Team; License : PSF License
+- **mdurl** - [link](https://pypi.org/pypi/mdurl/): (c) Vitaly Puzrin, Alex Kocharin; License : MIT License
+- **mpmath** - [link](https://pypi.org/pypi/mpmath/): (c) Fredrik Johansson and mpmath contributors; License : BSD
+- **networkx** - [link](https://pypi.org/pypi/networkx/): (c) NetworkX Developers; License : BSD 3-Clause 
+- **numpy** - [link](https://pypi.org/pypi/numpy/): (c) NumPy Developers; License : BSD-3-Clause
+- **opencv-python** - [link](https://pypi.org/pypi/opencv-python/): (c) Olli-Pekka Heinisuo; License : Apache 2.0
+- **packaging** - [link](https://pypi.org/pypi/packaging/): (c) Donald Stufft and individual contributors; License : Apache 2.0 or BSD 2-Clause
+- **pandas** - [link](https://pypi.org/pypi/pandas/): (c) AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team; License : BSD 3-Clause 
+- **pillow** - [link](https://pypi.org/pypi/pillow/): (c) Jeffrey A. Clark and contributors; License : HPND
+- **protobuf** - [link](https://pypi.org/pypi/protobuf/): (c) Google Inc.; License : BSD 3-Clause
+- **psutil** - [link](https://pypi.org/pypi/psutil/): (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola; License : BSD-3-Clause
+- **py-cpuinfo** - [link](https://pypi.org/pypi/py-cpuinfo/): (c) Matthew Brennan Jones; License : MIT
+- **pyarrow** - [link](https://pypi.org/pypi/pyarrow/): (с) The Apache Software Foundation; License : Apache 2.0
+- **pydeck** - [link](https://pypi.org/pypi/pydeck/): (с) vis.gl, a Series of LF Projects, LLC; License : Apache 2.0
+- **Pygments** - [link](https://pypi.org/pypi/Pygments/): (c) Georg Brandl and developers; License : BSD 2-Clause
+- **pyparsing** - [link](https://pypi.org/pypi/pyparsing/): (c) Pyparsing; License : MIT License
+- **python-dateutil** - [link](https://pypi.org/pypi/python-dateutil/): (c) Paul Ganssle, dateutil contributors; License : Apache 2.0 or BSD 2-Clause
+- **python-dotenv** - [link](https://pypi.org/pypi/python-dotenv/): (c) Saurabh Kumar (python-dotenv), Ted Tieken (django-dotenv-rw), Jacob Kaplan-Moss (django-dotenv); License : BSD-3-Clause
+- **pytz** - [link](https://pypi.org/pypi/pytz/): (c) Stuart Bishop; License : MIT
+- **PyYAML** - [link](https://pypi.org/pypi/PyYAML/): (c) Ingy döt Net, Kirill Simonov; License : MIT
+- **referencing** - [link](https://pypi.org/pypi/referencing/): (c) Julian Berman; License : MIT
+- **requests** - [link](https://pypi.org/pypi/requests/): (с) Kenneth Reitz; License : Apache 2.0
+- **rich** - [link](https://pypi.org/pypi/rich/): (c) Will McGugan; License : MIT 
+- **rpds-py** - [link](https://pypi.org/pypi/rpds-py/): (c) Julian Berman; License : MIT
+- **s3transfer** - [link](https://pypi.org/pypi/s3transfer/): (c) Amazon.com, Inc. or its affiliates; License : Apache 2.0
+- **scikit-learn** - [link](https://pypi.org/pypi/scikit-learn/): (c) The scikit-learn developers; License : BSD-3-Clause
+- **scipy** - [link](https://pypi.org/pypi/scipy/): (c) Enthought, Inc., SciPy Developers; License : BSD 3-Clause
+- **seaborn** - [link](https://pypi.org/pypi/seaborn/): (c) Michael L. Waskom; License : BSD 3-Clause
+- **setuptools** - [link](https://pypi.org/pypi/setuptools/): (c) Python Packaging Authority; License : MIT
+- **six** - [link](https://pypi.org/pypi/six/): (c) Benjamin Peterson; License : MIT
+- **smmap** - [link](https://pypi.org/pypi/smmap/): (c) Sebastian Thiel and contributors; License : BSD 3-Clause
+- **stqdm** - [link](https://pypi.org/pypi/stqdm/): Apache 2.0
+- **streamlit** - [link](https://pypi.org/pypi/streamlit/): (c) Streamlit; License : Apache 2.0
+- **streamlit-image-select** - [link](https://pypi.org/pypi/streamlit-image-select/):(c) Johannes Rieke; License : MIT
+- **sympy** - [link](https://pypi.org/pypi/sympy/): (c) SymPy Development Team; License : BSD 3-Clause
+- **tenacity** - [link](https://pypi.org/pypi/tenacity/): (c) Julien Danjou; License : Apache 2.0
+- **threadpoolctl** - [link](https://pypi.org/pypi/threadpoolctl/): (c) threadpoolctl contributors; License : BSD 3-Clause
+- **toml** - [link](https://pypi.org/pypi/toml/): (c) William Pearson and contributors; License : MIT
+- **toolz** - [link](https://pypi.org/pypi/toolz/): (c) Matthew Rocklin;  BSD 3-Clause
+- **torch** - [link](https://pypi.org/pypi/torch/): (c) Facebook, Inc and contributors; License : BSD 3-Clause
+- **torchvision** - [link](https://pypi.org/pypi/torchvision/): (c) Soumith Chintala; License : BSD
+- **tornado** - [link](https://pypi.org/pypi/tornado/): (c) The Tornado Authors; License : Apache 2.0
+- **tqdm** - [link](https://pypi.org/pypi/tqdm/): (c) tqdm developers; License : MPL-2.0 AND MIT
+- **ttach** - [link](https://pypi.org/pypi/ttach/): (c) Pavel Yakubovskiy; License : MIT
+- **typing_extensions** - [link](https://pypi.org/pypi/typing_extensions/): (c) Python Software Foundation; License : Python Software Foundation License
+- **tzdata** - [link](https://pypi.org/pypi/tzdata/): (c) Paul Ganssle (Google); License : Apache 2.0
+- **ultralytics** - [link](https://pypi.org/pypi/ultralytics/): (с) Glenn Jocher, Qiu Jing, Ayush Chaurasia; License : AGPL 3.0
+- **ultralytics-thop** - [link](https://pypi.org/pypi/ultralytics-thop/): (с) Glenn Jocher and developers; License : AGPL 3.0
+- **urllib3** - [link](https://pypi.org/pypi/urllib3/): (c) Andrey Petrov and contributors; License : MIT
+- **monai** - [link](https://pypi.org/pypi/monai/): (c) M. Jorge Cardoso and contributors; License : Apache 2.0
