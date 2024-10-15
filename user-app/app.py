@@ -4,7 +4,6 @@ from streamlit_image_select import image_select
 import numpy as np
 from PIL import Image
 import torch
-from pytorch_grad_cam.utils.image import show_cam_on_image
 from stqdm import stqdm
 import io
 from utils import *
@@ -25,10 +24,28 @@ form_data = {}
 
 # Загрузка переменных окружения из .env файла
 load_dotenv()
+BUCKET = os.getenv('BUCKET')
+IFRAME = '<iframe src="https://ghbtns.com/github-btn.html?user=yandex-cloud-socialtech&repo=spina-bifida&type=watch&count=true&size=large" frameborder="0" scrolling="0" width="121" height="30" title="GitHub"></iframe>'
+
+# Настройки страницы
+st.set_page_config(
+     page_title='Spina bifida',
+     layout="wide"
+)
+
+###########
+# Функции #
+###########
 
 # Функция для отображения модального окна с условиями использования
 def show_terms_modal():
     st.write("### Spina Bifida")
+    st.markdown(
+        f"""
+        ### GitHub {IFRAME}
+        """,
+        unsafe_allow_html=True,
+    )
     st.write("Пожалуйста, прочитайте и примите наши условия использования данного сервиса, чтобы продолжить.")
     st.markdown("---")
     st.write("""
@@ -73,6 +90,64 @@ def upload_to_yandex_cloud(file_name, bucket, object_name=None):
     except Exception as e:
         st.error(f"Произошла ошибка: {e}")
 
+# Функция настройки моделей
+@st.cache_resource(show_spinner = "Load model ...")
+def get_processor():
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    return MedicalImageProcessor(
+        yolo_model_path='models/best_object_detection.pt',
+        axial_quality_model_path='models/axial_quality.pt',
+        axial_pathology_model_path='models/axial_pathology.pt',
+        sagittal_quality_model_path='models/sagittal_quality.pt',
+        sagittal_pathology_model_path='models/sagittal_pathology.pt',
+        device=device
+    )
+
+# Функции обработки изображений
+@st.cache_data(show_spinner = "Image processing ...", ttl = 3600, max_entries = 100)
+def cache_process_image(img_bytes, img_name):
+    return processor.process_image(img_bytes, img_name)
+
+# Функции обработки изображений
+def process_uploaded_files(uploaded_files):
+        with stqdm(uploaded_files, mininterval=1) as pbar:
+            st.session_state['imgs'] = {}
+            st.session_state['processed_images'] = {}
+            for uploaded_file in pbar:
+                img = Image.open(uploaded_file)
+                img_bytes = io.BytesIO()
+                img.save(img_bytes, format='PNG')
+                img_bytes = img_bytes.getvalue()
+                img_name = uploaded_file.name
+                if img_name not in st.session_state['imgs']:
+                    result = cache_process_image(img_bytes, img_name)
+                    st.session_state['imgs'][img_name] = img
+                    st.session_state['processed_images'][img_name] = result
+    
+def process_example_files(example_files):
+    st.session_state['imgs'] = {}
+    st.session_state['processed_images'] = {}
+    for example_file in example_files:
+        img = Image.open(example_file)
+        img_bytes = io.BytesIO()
+        img.save(img_bytes, format='PNG')
+        img_bytes = img_bytes.getvalue()
+        img_name = example_file
+        if img_name not in st.session_state['imgs']:
+            result = cache_process_image(img_bytes, img_name)
+            st.session_state['imgs'][img_name] = img
+            st.session_state['processed_images'][img_name] = result
+
+# Функция генерации уникального идентификатора файла
+def get_unique_id():
+    unique_id = str(uuid.uuid4())
+    return unique_id
+
+
+##############
+# Приложение #
+##############
+
 # Проверяем, если пользователь уже принял условия
 if 'accepted' not in st.session_state:
     st.session_state.accepted = False
@@ -84,6 +159,12 @@ if not st.session_state.accepted:
 else:
     # Заголовок приложения
     st.title("Spina Bifida")
+    st.markdown(
+        f"""
+        ### GitHub {IFRAME}
+        """,
+        unsafe_allow_html=True,
+    )
 
     st.markdown("""
         <style>
@@ -111,7 +192,7 @@ else:
     st.markdown("Представленный алгоритм на основе ИИ направлен на детектирование спектра патологий центральной нервной системы (в том числе Спина бифида) на эхографических снимках головного мозга плода в первом триместре беременности. Для проведения анализа необходимо загрузить один или несколько ключевых снимков.")
     st.markdown("После получения результатов анализа оставьте, пожалуйста, обратную связь.")
 
-# Примеры изображений для выбора
+    # Примеры изображений для выбора
     example_images = {
         "Example 1": "example_images/norm-sagittal.jpg",
         "Example 2": "example_images/norm-axial.jpg",
@@ -131,56 +212,10 @@ else:
         st.warning("Могут быть обработаны только 2 файла!")
         uploaded_files = uploaded_files[:2]
     
-    # Настройка модели и обработка изображений
-    @st.cache_resource(show_spinner = "Загрузка модели ...")
-    def get_processor():
-        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        return MedicalImageProcessor(
-            yolo_model_path='models/best_object_detection.pt',
-            axial_quality_model_path='models/axial_quality.pt',
-            axial_pathology_model_path='models/axial_pathology.pt',
-            sagittal_quality_model_path='models/sagittal_quality.pt',
-            sagittal_pathology_model_path='models/sagittal_pathology.pt',
-            device=device
-        )
-    
     processor = get_processor()
     
     if 'feedback' not in st.session_state:
         st.session_state['feedback'] = {}
-    
-    @st.cache_data(show_spinner = "Обработка изображения ...", ttl = 3600, max_entries = 10)
-    def cache_process_image(img_bytes, img_name):
-        return processor.process_image(img_bytes, img_name)
-    
-    def process_uploaded_files(uploaded_files):
-        with stqdm(uploaded_files, mininterval=1) as pbar:
-            st.session_state['imgs'] = {}
-            st.session_state['processed_images'] = {}
-            for uploaded_file in pbar:
-                img = Image.open(uploaded_file)
-                img_bytes = io.BytesIO()
-                img.save(img_bytes, format='PNG')
-                img_bytes = img_bytes.getvalue()
-                img_name = uploaded_file.name
-                if img_name not in st.session_state['imgs']:
-                    result = cache_process_image(img_bytes, img_name)
-                    st.session_state['imgs'][img_name] = img
-                    st.session_state['processed_images'][img_name] = result
-    
-    def process_example_files(example_files):
-        st.session_state['imgs'] = {}
-        st.session_state['processed_images'] = {}
-        for example_file in example_files:
-            img = Image.open(example_file)
-            img_bytes = io.BytesIO()
-            img.save(img_bytes, format='PNG')
-            img_bytes = img_bytes.getvalue()
-            img_name = example_file
-            if img_name not in st.session_state['imgs']:
-                result = cache_process_image(img_bytes, img_name)
-                st.session_state['imgs'][img_name] = img
-                st.session_state['processed_images'][img_name] = result
     
 
     if uploaded_files:
@@ -303,7 +338,7 @@ else:
     if st.button("Отправить", disabled=button_disable):
     
         # Генерация уникального имени файла с использованием UUID
-        unique_id = str(uuid.uuid4())
+        unique_id = get_unique_id()
         json_file_name = f'form_data_{unique_id}.json'
         img_file_name = f'img_{unique_id}_{option}'
 
@@ -322,8 +357,6 @@ else:
 
         # Сохранение выбранного изображения (временно)
         st.session_state['imgs'][option].save(img_file_name)
-    
-        BUCKET = os.getenv('BUCKET')
 
         # Загрузка JSON файла в Yandex Object Storage
         upload_to_yandex_cloud(json_file_name, BUCKET)
