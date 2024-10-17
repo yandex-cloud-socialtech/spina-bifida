@@ -49,7 +49,7 @@ class MedicalImageProcessor:
                 Resize(spatial_size=(255, 255), mode='area'),
                 EnsureType(),
             ])
-        self.plane_type = {1: 'сагиттальной', 2: 'аксиальной'}
+        self.plane_type = {1: _('сагиттальной'), 2: _('аксиальной')}
 
     @staticmethod
     def _crop_image(original_img, roi_bounding_box):
