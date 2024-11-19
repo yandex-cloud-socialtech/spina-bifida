@@ -51,10 +51,6 @@ coverage.xml
 .pytest_cache/
 cover/
 
-# Translations
-*.mo
-*.pot
-
 # Django stuff:
 *.log
 local_settings.py
@@ -169,3 +165,6 @@ form_data_*
 img_
 annotation_
 org_list.txt
+
+# Mac OS DS_Store
+.DS_Store
