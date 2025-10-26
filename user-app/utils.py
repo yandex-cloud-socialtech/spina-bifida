@@ -2,7 +2,7 @@ import torch
 import numpy as np
 
 from ultralytics import YOLO
-from monai.networks.nets import densenet121
+from monai.networks.nets import densenet201, densenet121
 from monai.transforms import (
     Transform, 
     Compose, 
@@ -31,17 +31,32 @@ class PILToNumpy(Transform):
             np_image = np.expand_dims(np_image, axis=2)
         
         return np_image.transpose(1, 0, 2)
+    
+import torch
+import torch.nn as nn
+import torchvision.models as models
+
+import torch
+import torch.nn as nn
+import torchvision.models as models
 
 class MedicalImageProcessor:
     """
     """
-    def __init__(self, yolo_model_path, axial_quality_model_path, axial_pathology_model_path, sagittal_quality_model_path, sagittal_pathology_model_path, device):
+    def __init__(self, 
+                 yolo_model_path, 
+                 axial_quality_model_path, 
+                 axial_pathology_model_path, 
+                 sagittal_quality_model_path, 
+                 sagittal_pathology_model_path, 
+                 device,
+                 model_version):
         self.device = device
         self.yolo_model = YOLO(yolo_model_path).to(device)
-        self.axial_quality_model = self._load_model(axial_quality_model_path)
-        self.axial_pathology_model = self._load_model(axial_pathology_model_path)
-        self.sagittal_quality_model = self._load_model(sagittal_quality_model_path)
-        self.sagittal_pathology_model = self._load_model(sagittal_pathology_model_path)
+        self.axial_quality_model = self._load_model(axial_quality_model_path, model_version)
+        self.axial_pathology_model = self._load_model(axial_pathology_model_path, model_version, bn=True)
+        self.sagittal_quality_model = self._load_model(sagittal_quality_model_path,  model_version)
+        self.sagittal_pathology_model = self._load_model(sagittal_pathology_model_path, model_version, bn=True)
         self.transform = Compose([
                 PILToNumpy(),
                 EnsureChannelFirst(channel_dim=-1),
@@ -49,14 +64,19 @@ class MedicalImageProcessor:
                 Resize(spatial_size=(255, 255), mode='area'),
                 EnsureType(),
             ])
+            
+        self.model_version = model_version
         self.plane_type = {1: _('сагиттальной'), 2: _('аксиальной')}
 
     @staticmethod
     def _crop_image(original_img, roi_bounding_box):
         return original_img.crop(roi_bounding_box)
 
-    def _load_model(self, path):
-        model = densenet121(spatial_dims=2, in_channels=3, out_channels=2, pretrained=True)
+    def _load_model(self, path, model_version, bn=False):
+        if model_version == 'v1':
+            model = densenet121(spatial_dims=2, in_channels=3, out_channels=2, pretrained=True)
+        else:
+            model = densenet201(spatial_dims=2, in_channels=3, out_channels=2, pretrained=True)
         model.load_state_dict(torch.load(path, map_location=self.device))
         model.eval()
         

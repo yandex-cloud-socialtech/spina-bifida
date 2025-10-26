@@ -204,3 +204,23 @@ msgstr "axial"
 #: utils.py:52
 msgid "сагиттальной"
 msgstr "sagittal"
+
+#: app.py:55
+msgid "Версия 1"
+msgstr "Version 1"
+
+#: app.py:56
+msgid "Базовая версия модели — стабильный и проверенный вариант"
+msgstr "The basic version of the model - stable and proven option."
+
+#: app.py:66
+msgid "Версия 2"
+msgstr "Version 2"
+
+#: app.py:67
+msgid "Новые модели (бета) — экспериментальная версия с потенциально более высокой точностью."
+msgstr "New models (beta) - experimental version with potentially higher accuracy."
+
+#: app.py:350
+msgid "На данном этапе мы исследуем несколько версий ИИ-моделей. Выберите версию, которая вам больше подходит:"
+msgstr "At this stage, we will explore several versions of AI models. Choose the version that suits you best:"
