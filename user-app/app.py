@@ -233,7 +233,7 @@ def get_processor(model_version="v1"):
     )
 
 # Функции обработки изображений
-@st.cache_data(show_spinner = "Image processing ...", ttl = 3600, max_entries = 100)
+@st.cache_data(show_spinner = "Image processing ...", ttl = 3600, max_entries = 100, hash_funcs={bytes: lambda x: x})
 def cache_process_image(img_bytes, img_name):
     return processor.process_image(img_bytes, img_name)
 
@@ -445,6 +445,29 @@ else:
         st.session_state['s3_object_names'] = {}
         cache_process_image.clear()
 
+    # Отслеживаем предыдущий режим работы
+    if 'previous_mode' not in st.session_state:
+        st.session_state['previous_mode'] = None
+    
+    current_mode = 'uploaded' if uploaded_files else 'examples'
+    
+    # Если режим изменился, очищаем соответствующий контент
+    if st.session_state['previous_mode'] != current_mode:
+        if current_mode == 'uploaded':
+            # Переключились на загруженные файлы - очищаем примеры
+            keys_to_remove = [key for key in st.session_state['imgs'].keys() if key.startswith('example_')]
+            for key in keys_to_remove:
+                del st.session_state['imgs'][key]
+                del st.session_state['processed_images'][key]
+        else:
+            # Переключились на примеры - очищаем загруженные файлы
+            keys_to_remove = [key for key in st.session_state['imgs'].keys() if not key.startswith('example_')]
+            for key in keys_to_remove:
+                del st.session_state['imgs'][key]
+                del st.session_state['processed_images'][key]
+        
+        st.session_state['previous_mode'] = current_mode
+    
     if uploaded_files:
         process_uploaded_files(uploaded_files)
     else:
@@ -453,7 +476,12 @@ else:
             images=list(example_images.values()),
             captions=[_("Норма (сагиттальная)"), _("Норма (аксиальная)"), _("Патология (сагиттальная)"), _("Патология (аксиальная)")]
         )
-        process_example_files(list(example_images.values()))
+        
+        # Обрабатываем все примеры заранее
+        # Если примеры уже обработаны, не обрабатываем повторно
+        existing_examples = [key for key in st.session_state['imgs'].keys() if key.startswith('example_')]
+        if not existing_examples:
+            process_example_files(list(example_images.values()))
     
     processed_images = st.session_state['processed_images']
     imgs = st.session_state['imgs']
@@ -506,7 +534,23 @@ else:
         with col1:
             # Показываем только примеры изображений (с префиксом "example_")
             options = [key for key in processed_images.keys() if key.startswith('example_')]
-            option = st.selectbox(_('Выберите конкретный снимок:'), options, label_visibility='collapsed', disabled=True)
+            
+            # Определяем выбранный пример на основе image_select
+            if example_img:
+                # Находим индекс выбранного изображения
+                example_list = list(example_images.values())
+                if example_img in example_list:
+                    example_index = example_list.index(example_img)
+                    example_keys = list(example_images.keys())
+                    example_key = example_keys[example_index]
+                    # Формируем option используя путь к файлу, как это делается в process_example_files
+                    example_file = example_images[example_key]
+                    option = f"example_{example_file}"
+                else:
+                    option = options[0] if options else None
+            else:
+                option = options[0] if options else None
+            
             if option:
                 st.image(imgs[option], caption=_('Выбранное изображение'), width='stretch')
                 col3, col4 = st.columns(2)
