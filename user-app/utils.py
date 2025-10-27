@@ -77,6 +77,7 @@ class MedicalImageProcessor:
             model = densenet121(spatial_dims=2, in_channels=3, out_channels=2, pretrained=True)
         else:
             model = densenet201(spatial_dims=2, in_channels=3, out_channels=2, pretrained=True)
+        
         model.load_state_dict(torch.load(path, map_location=self.device))
         model.eval()
         
@@ -93,7 +94,11 @@ class MedicalImageProcessor:
 
     def get_prediction(self, cropped_img_tensor, model):
 
-        outputs = model(cropped_img_tensor)
+        #For consistency between MONAI and PyTorch inference
+        if self.model_version == 'v2':
+            outputs = model(cropped_img_tensor.permute(0, 1, 3, 2))
+        else:
+            outputs = model(cropped_img_tensor)
         prob = torch.sigmoid(outputs[0][1]).item()
 
         return prob
