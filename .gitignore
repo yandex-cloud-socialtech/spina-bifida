@@ -123,6 +123,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+apps/user-app/.env
+service-account-key*.json
 
 # Spyder project settings
 .spyderproject
@@ -157,10 +159,12 @@ cython_debug/
 
 # Models
 models*/
+apps/user-app/models*/
 
 # Venv
 sb-venv/
 dsapp-venv/
+user-app-venv/
 form_data_*
 img_
 annotation_
@@ -168,3 +172,15 @@ org_list.txt
 
 # Mac OS DS_Store
 .DS_Store
+
+
+user-app/models/axial_pathology.pt
+user-app/models/axial_quality.pt
+user-app/models/best_object_detection.pt
+user-app/models/sagittal_pathology.pt
+user-app/models/sagittal_quality.pt
+user-app/.env
+
+
+#Cursor
+.cursor/
