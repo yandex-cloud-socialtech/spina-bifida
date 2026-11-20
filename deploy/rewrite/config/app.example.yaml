@@ -1,0 +1,73 @@
+access:
+  mode: ip
+  domain:
+  acme_email:
+
+inference:
+  device: auto
+  default_model_version: v2
+  max_parallel_jobs: 1
+  timeout_seconds: 300
+  models_root: /models
+  thresholds:
+    plane_detection: 0.10
+    quality: 0.50
+    assessment: 0.50
+    # Half-width of the yellow UI band; 0.10 means +/-10 percentage points.
+    warning_margin: 0.10
+
+storage:
+  db_dir: /data/db
+  jobs_dir: /data/jobs
+  feedback_dir: /data/feedback
+  images:
+    mode: feedback_only
+    temporary_ttl_hours: 24
+    retained_ttl_days: 90
+    max_request_bytes: 20971520
+    max_batch_bytes: 220200960
+    max_image_pixels: 25000000
+    max_total_gb: 20
+    min_free_gb: 2
+  feedback:
+    retained_ttl_days: 365
+    retain_assets: true
+
+logs:
+  level: INFO
+  directory: /data/logs
+  rotate_max_bytes: 52428800
+  rotate_interval_hours: 24
+  compress: true
+  retention_days: 30
+  max_archives: 30
+  max_total_gb: 5
+
+object_storage:
+  enabled: false
+  endpoint:
+  bucket:
+  logs_prefix: logs/
+  feedback_prefix: feedback/
+  upload_logs: true
+  upload_feedback: false
+  retry:
+    max_attempts: 8
+    base_seconds: 5
+    max_seconds: 3600
+
+backup:
+  destination: /data/backups
+  retention_count: 7
+
+localization:
+  default: ru
+  supported: [ru, en, kk, uz]
+
+# Self-registration and password recovery require a verified Postbox sender.
+postbox:
+  enabled: false
+  endpoint: https://postbox.cloud.yandex.net
+  region: ru-central1
+  sender: ""
+  public_url: ""

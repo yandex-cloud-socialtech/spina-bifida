@@ -1,0 +1,23 @@
+:root {
+  --g-font-family-sans: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sb-radius: 16px;
+  --sb-shadow: 0 12px 36px rgb(0 0 0 / 8%);
+  --sb-header-height: 68px;
+}
+
+body.g-root {
+  --sb-bg: var(--g-color-base-background);
+  --sb-surface: var(--g-color-base-float);
+  --sb-border: var(--g-color-line-generic);
+  --sb-text: var(--g-color-text-primary);
+  --sb-text-secondary: var(--g-color-text-secondary);
+  --sb-accent: var(--g-color-base-brand);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}

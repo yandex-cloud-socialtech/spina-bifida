@@ -1,0 +1,268 @@
+{
+  "app": {
+    "product": "Spina Bifida",
+    "service": "Tadqiqot servisi",
+    "workspaceLabel": "Tahlil ish maydoni"
+  },
+  "partners": {
+    "label": "Hamkor tashkilotlar",
+    "yandexCloud": "Yandex Cloud",
+    "spinaBifidaFoundation": "«Spina bifida» xayriya jamg‘armasi",
+    "kulakovCenter": "V.I. Kulakov nomidagi Milliy tibbiy tadqiqot markazi"
+  },
+  "locale": {
+    "label": "Til",
+    "ru": "Русский",
+    "en": "English",
+    "kk": "Қазақша",
+    "uz": "O‘zbekcha"
+  },
+  "theme": {
+    "label": "Mavzu",
+    "dark": "Qorong‘i",
+    "light": "Yorug‘"
+  },
+  "model": {
+    "label": "Model",
+    "v1": "v1",
+    "v2": "v2"
+  },
+  "auth": {
+    "loginTitle": "Servisga kirish",
+    "email": "Elektron pochta",
+    "password": "Parol",
+    "submit": "Kirish",
+    "submitting": "Kirilmoqda…",
+    "logout": "Chiqish",
+    "profile": "Profil"
+  },
+  "terms": {
+    "title": "Foydalanish shartlari",
+    "intro": "Davom etish uchun ushbu servisdan foydalanish shartlarini o‘qib, qabul qiling.",
+    "sections": {
+      "purpose": {"title": "1. Servisning maqsadi", "body": "Ushbu veb-servis faqat ilmiy, ta’lim va tadqiqot maqsadlari uchun ishlab chiqilgan sun’iy intellektga asoslangan vositadir. U ro‘yxatdan o‘tgan tibbiy buyum emas, klinik diagnostika vositasi maqomiga ega emas va tashxis qo‘yish, bemorlar holatini kuzatish yoki klinik qarorlar qabul qilish uchun mo‘ljallanmagan."},
+      "audience": {"title": "2. Maqsadli auditoriya", "body": "Servis faqat tegishli ta’lim va tajribaga ega bo‘lgan ultratovush diagnostikasi, perinatologiya va turdosh tibbiy fanlar sohasidagi malakali mutaxassislar foydalanishi uchun mo‘ljallangan. Tibbiy ma’lumoti bo‘lmagan shaxslarning servisga kirishi va undan foydalanishi taqiqlanadi."},
+      "liability": {"title": "3. Javobgarlikni cheklash", "efforts": "Servis mualliflari tahlil algoritmlarining aniqligi va dolzarbligini ta’minlash uchun barcha oqilona sa’y-harakatlarni amalga oshiradilar. Biroq, SI ishining natijalari kirish ma’lumotlari sifati, tasvirlar xususiyatlari va joriy texnologik imkoniyatlar bilan cheklanishi mumkin.", "results": "Servis taqdim etadigan tahlil natijalari tibbiy xulosa, tashxis yoki tavsiya hisoblanmaydi.", "consultation": "Servisdagi hech qanday ma’lumot davolovchi shifokor yoki sog‘liqni saqlash sohasidagi boshqa malakali mutaxassis bilan maslahatlashuv o‘rnida ishlatilmasligi kerak."},
+      "data": {"title": "4. Ma’lumotlarni qayta ishlash", "deidentify": "• Bemorlarning shaxsiy ma’lumotlari (F.I.Sh., tug‘ilgan sana, tadqiqot raqamlari va h.k.) mavjud bo‘lgan tasvirlarni servisga yuklash taqiqlanadi.", "feedback": "• SI modeli sifatini yanada yaxshilash uchun foydalanuvchi ixtiyoriy ravishda fikr-mulohaza bildirgan tasvirlar va ma’lumotlargina saqlanadi.", "logging": "• Tizimdagi barcha foydalanuvchi harakatlari xavfsizlik, audit va texnik qo‘llab-quvvatlash maqsadida jurnalga yoziladi.", "disclosure": "• Qonunchilikda nazarda tutilgan holatlar bundan mustasno, foydalanuvchi roziligisiz hech qanday ma’lumot uchinchi shaxslarga berilmaydi."},
+      "consent": {"title": "5. Foydalanuvchi roziligi", "intro": "Ushbu servisdan foydalanib, siz quyidagilarni tasdiqlaysiz:", "notice": "• Ushbu izoh bilan tanishdingiz;", "specialist": "• Tibbiy ma’lumotlar bilan ishlash huquqiga ega tibbiyot mutaxassisisiz;", "decisions": "• Servisdan klinik qarorlar qabul qilish uchun foydalanmaysiz;", "data": "• Yuqorida ko‘rsatilgan ma’lumotlarni qayta ishlash shartlariga rozisiz."}
+    },
+    "important": "❗ Muhim: Servis natijasi malakali shifokor tomonidan talqin qilinishi va tasdiqlanishini talab qiladigan dastlabki bahodir. Yakuniy xulosa uchun davolovchi mutaxassis javobgar.",
+    "accept": "O‘qidim va yuqoridagi shartlarga roziman"
+  },
+  "access": {
+    "forbiddenTitle": "Huquqlar yetarli emas",
+    "forbiddenBody": "Bu bo‘lim faqat administratorlar uchun mavjud."
+  },
+  "serviceBadge": {
+    "ready": "Servis mavjud",
+    "research": "Faqat tadqiqot maqsadida"
+  },
+  "analysis": {
+    "title": "Tasvirlarni tahlil qilish",
+    "intro": "Shaxsiy ma’lumotlardan tozalangan bittadan o‘ntagacha UTT kadrini qo‘shing.",
+    "upload": "Tasvirlarni yuklash",
+    "dropTitle": "UTT kadrlarini shu yerga olib keling",
+    "dropHint": "JPEG yoki PNG, o‘nta kadrgacha",
+    "frames": "Kadrlar",
+    "frame": "{{count}}-kadr",
+    "frameCounter": "10 tadan {{count}}",
+    "frameProgress": "{{count}}%",
+    "selectFrame": "{{count}}-kadrni tanlash",
+    "removeFrame": "{{count}}-kadrni olib tashlash",
+    "start": "Tahlilni boshlash",
+    "retry": "Tahlilni takrorlash",
+    "retryCleanup": "Tozalashni takrorlash",
+    "replace": "Almashtirish",
+    "clear": "Tozalash",
+    "remove": "Olib tashlash",
+    "loadExamples": "Misollarni ochish",
+    "viewer": "Tasvirni ko‘rish",
+    "viewerControls": "Ko‘rishni boshqarish",
+    "zoomOut": "Masshtabni kichraytirish",
+    "zoomIn": "Masshtabni kattalashtirish",
+    "zoomPercent": "Masshtab {{count}}%",
+    "fitImage": "O‘lchamga moslash",
+    "preparation": "Tayyorlash",
+    "guidanceTitle": "Nimani yuklash kerak",
+    "guidanceSagittal": "Homila umurtqasining sagittal kadri",
+    "guidanceAxial": "Homila boshining aksial kadri",
+    "deidentifyWarning": "Bemor ismi yoki boshqa identifikatorlari bor kadrlarni yuklamang.",
+    "errorRemediation": "Faylni tekshirib qayta urinib ko‘ring; qo‘shilgan kadrlar saqlanadi.",
+    "duplicateRemediation": "Bu kadr ro‘yxatda mavjud. Boshqa faylni tanlang yoki mavjud kadrni o‘chiring; butun to‘plamni qayta yuklash shart emas.",
+    "processingHint": "Qayta ishlash tugaguncha sahifani yopmang.",
+    "progress": "Tahlil jarayoni",
+    "batchCompleted": "{{total}} tadan {{completed}} tasi yakunlandi",
+    "batchActive": "Qayta ishlanmoqda: {{count}}",
+    "batchQueued": "Navbatda: {{count}}",
+    "batchProgress": "To‘plam jarayoni: {{count}}%",
+    "queuePosition": "Navbatdagi o‘rin: {{count}}",
+    "newAnalysis": "Yangi tadqiqot",
+    "layers": {
+      "label": "Tasvir qatlami",
+      "original": "Asl tasvir",
+      "roi": "Qiziqish sohasi",
+      "heatmap": "Heatmap",
+      "roiUnavailable": "Bu kadr uchun qiziqish sohasi mavjud emas.",
+      "heatmapUnavailable": "Bu kadr uchun heatmap mavjud emas."
+    },
+    "states": {
+      "submitting": "Tasvirlar yuborilmoqda",
+      "queued": "Navbatda",
+      "validating": "Fayllar tekshirilmoqda",
+      "quality_check": "Sifat tekshirilmoqda",
+      "plane_detection": "Tekislik aniqlanmoqda",
+      "roi_detection": "Qiziqish sohasi qidirilmoqda",
+      "scoring": "Baho hisoblanmoqda",
+      "explanation": "Izoh tayyorlanmoqda",
+      "completed": "Tahlil yakunlandi",
+      "rejected_quality": "Sifat yetarli emas",
+      "failed_recoverable": "Texnik xato",
+      "expired": "Materiallar saqlash muddati bo‘yicha o‘chirildi",
+      "deleted": "Tadqiqot o‘chirildi"
+    },
+    "result": {
+      "qualityHeading": "Sifat",
+      "planeHeading": "Tekislik",
+      "assessmentHeading": "Patologiya belgilari",
+      "qualitySatisfactory": "Qoniqarli",
+      "qualityUnsatisfactory": "Qoniqarsiz",
+      "pathologyDetected": "Aniqlandi",
+      "pathologyNotDetected": "Aniqlanmadi",
+      "notDetermined": "Aniqlab bo‘lmadi",
+      "probabilityNote": "Bu tashxis ehtimolligi emas."
+    }
+  },
+  "medical": {
+    "axial": "Aksial",
+    "sagittal": "Sagittal",
+    "unknown": "Tekislik aniqlanmadi"
+  },
+  "feedback": {
+    "title": "Fikr-mulohaza",
+    "positive": "Natija foydali",
+    "negative": "Tekshirish kerak",
+    "comment": "Izoh",
+    "submit": "Yuborish",
+    "sent": "Fikr-mulohaza yuborildi"
+  },
+  "admin": {
+    "title": "Foydalanuvchilar",
+    "eyebrow": "Boshqaruv",
+    "intro": "Mahalliy hisoblarni yarating va xizmatga kirishni boshqaring.",
+    "create": "Foydalanuvchi qo‘shish",
+    "email": "Elektron pochta",
+    "userEmail": "Foydalanuvchi elektron pochtasi",
+    "temporaryPassword": "Vaqtinchalik parol",
+    "role": "Rol",
+    "locale": "Til",
+    "userLocale": "Foydalanuvchi tili",
+    "status": "Holat",
+    "actions": "Harakatlar",
+    "listTitle": "Foydalanuvchilar ro‘yxati",
+    "tableLabel": "Xizmat foydalanuvchilari",
+    "loading": "Foydalanuvchilar yuklanmoqda…",
+    "listError": "Foydalanuvchilarni yuklab bo‘lmadi.",
+    "empty": "Hozircha foydalanuvchilar yo‘q.",
+    "active": "Faol",
+    "blocked": "Bloklangan",
+    "block": "Bloklash",
+    "unblock": "Blokdan chiqarish",
+    "blockUser": "{{email}} foydalanuvchisini bloklash",
+    "unblockUser": "{{email}} foydalanuvchisini blokdan chiqarish",
+    "delete": "Foydalanuvchini o‘chirish",
+    "deleteUser": "{{email}} foydalanuvchisini o‘chirish",
+    "confirmDeleteTitle": "Foydalanuvchi o‘chirilsinmi?",
+    "confirmDelete": "{{email}} hisobi o‘chiriladi va tizimga kira olmaydi.",
+    "roles": {"user": "Foydalanuvchi", "admin": "Administrator"},
+    "statuses": {"active": "Faol", "blocked": "Bloklangan", "deleted": "O‘chirilgan", "pending_email": "Email tasdiqlanishini kutmoqda", "pending": "Moderatsiyani kutmoqda", "rejected": "Rad etilgan"},
+    "success": {
+      "created": "Foydalanuvchi qo‘shildi",
+      "blocked": "Foydalanuvchi bloklandi",
+      "unblocked": "Foydalanuvchi blokdan chiqarildi",
+      "deleted": "Foydalanuvchi o‘chirildi",
+      "approved": "Ro‘yxatdan o‘tish tasdiqlandi va foydalanuvchiga xat yuborildi.",
+      "rejected": "Ro‘yxatdan o‘tish rad etildi va foydalanuvchiga xat yuborildi."
+    },
+    "panel": "Administrator paneli",
+    "approve": "Tasdiqlash",
+    "reject": "Rad etish",
+    "approveUser": "{{email}} ni tasdiqlash",
+    "rejectUser": "{{email}} ni rad etish"
+  },
+  "errors": {
+    "authentication_required": "Davom etish uchun tizimga kiring.",
+    "invalid_credentials": "Pochta yoki parol noto‘g‘ri.",
+    "rate_limited": "Urinishlar juda ko‘p. Keyinroq qayta urinib ko‘ring.",
+    "csrf_failed": "Sessiya muddati tugadi. Sahifani yangilang.",
+    "network_error": "Servis bilan aloqa yo‘q.",
+    "local_storage_full": "Yangi tahlil uchun joy yetarli emas.",
+    "unsupported_format": "Fayl formati qo‘llab-quvvatlanmaydi.",
+    "image_too_large": "Fayl ruxsat etilgan o‘lchamdan katta.",
+    "image_decode_failed": "Tasvirni o‘qib bo‘lmadi.",
+    "duplicate_image": "Bu kadr oldin qo‘shilgan.",
+    "too_many_frames": "O‘nta kadrdan ortiq qo‘shib bo‘lmaydi.",
+    "invalid_analysis_response": "Tahlil servisi noto‘g‘ri javob qaytardi.",
+    "delete_failed": "Tadqiqotni o‘chirib bo‘lmadi. Qayta urinib ko‘ring.",
+    "example_unavailable": "Misolni yuklab bo‘lmadi.",
+    "analysis_not_found": "Tadqiqot topilmadi.",
+    "inference_timeout": "Tahlil juda uzoq davom etdi.",
+    "inference_failed": "Tahlilni bajarib bo‘lmadi.",
+    "email_exists": "Bu elektron pochta bilan foydalanuvchi mavjud.",
+    "self_block_forbidden": "O‘z hisobingizni bloklay olmaysiz.",
+    "last_active_admin": "Oxirgi faol administratorni o‘zgartirib bo‘lmaydi.",
+    "invalid_user": "Email manzili va parolni tekshiring (12–256 belgi).",
+    "user_not_found": "Foydalanuvchi topilmadi.",
+    "admin_required": "Administrator kirishi talab qilinadi.",
+    "unknown": "Texnik xato yuz berdi.",
+    "invalid_token": "Havola yaroqsiz, muddati tugagan yoki ishlatilgan. Yangi xat so‘rang.",
+    "current_password_invalid": "Joriy parol noto‘g‘ri.",
+    "password_mismatch": "Parollar mos kelmaydi.",
+    "mail_unavailable": "Xat yuborilmadi. Keyinroq qayta urinib ko‘ring."
+  },
+  "common": {
+    "loading": "Yuklanmoqda…",
+    "retry": "Qayta urinish",
+    "cancel": "Bekor qilish",
+    "save": "Saqlash",
+    "close": "Yopish",
+    "or": "yoki"
+  },
+  "account": {
+    "navigation": "Hisob navigatsiyasi",
+    "backToLogin": "Kirish",
+    "currentPassword": "Joriy parol",
+    "newPassword": "Yangi parol",
+    "confirmPassword": "Parolni takrorlang",
+    "passwordHint": "12 dan 256 tagacha belgidan foydalaning.",
+    "register": {
+      "title": "Ro‘yxatdan o‘tish",
+      "intro": "Emailni tasdiqlang va administrator roziligini kuting. Tasdiqlashdan oldin kirish mumkin emas.",
+      "action": "Ro‘yxatdan o‘tish",
+      "success": "Ro‘yxatdan o‘tish mumkin bo‘lsa, tasdiqlash havolasi yuborildi. Spam jildini ham tekshiring. Qayta yuborish uchun shu shakldan foydalaning."
+    },
+    "forgot-password": {
+      "title": "Parolni unutdingizmi?",
+      "intro": "Hisobingizning email manzilini kiriting.",
+      "action": "Havolani yuborish",
+      "success": "Faol hisob mavjud bo‘lsa, uning email manziliga parolni tiklash havolasi yuborildi."
+    },
+    "verify-email": {
+      "title": "Emailni tasdiqlash",
+      "intro": "Xatdagi manzilni tasdiqlash uchun tugmani bosing.",
+      "action": "Emailni tasdiqlash",
+      "success": "Email tasdiqlandi. So‘rov moderatsiyani kutmoqda. Administrator tasdiqlagach, xat olasiz va kirishingiz mumkin."
+    },
+    "reset-password": {
+      "title": "Parolni tiklash",
+      "intro": "Yangi parol o‘rnating. Havola 30 daqiqa amal qiladi va bir marta ishlatiladi.",
+      "action": "Parolni saqlash",
+      "success": "Parol o‘zgartirildi. Yangi parol bilan kiring."
+    },
+    "change-password": {
+      "title": "Parolni o‘zgartirish",
+      "intro": "Joriy va yangi parolni kiriting. Barcha qurilmalarda qayta kirish talab qilinadi.",
+      "action": "Parolni o‘zgartirish",
+      "success": "Parol o‘zgartirildi. Yangi parol bilan kiring."
+    }
+  }
+}

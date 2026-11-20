@@ -1,0 +1,7 @@
+# Model weights are mounted at runtime from Object Storage (see deploy/scripts/sync-models.sh).
+user-app/models/
+user-app/models*/
+**/*.pt
+**/.env
+**/__pycache__/
+**/.git/

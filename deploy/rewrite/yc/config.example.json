@@ -1,0 +1,10 @@
+{
+  "folder_id": "YOUR_FOLDER_ID",
+  "name": "sb-new",
+  "admin_email": "admin@example.com",
+  "zone": "ru-central1-d",
+  "cores": 4,
+  "memory_gb": 8,
+  "disk_gb": 50,
+  "ssh_cidr": "0.0.0.0/0"
+}

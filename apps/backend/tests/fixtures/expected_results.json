@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "model_version": "v1",
+  "score_tolerance": 0.0001,
+  "rationale": "The bounded ROI uses Pillow-compatible coordinate rounding. Unrounded processor scores and categories agree with the legacy processor after its two-decimal rounding. Original PNG checksums and legacy exact ROI/Grad-CAM checksums pin the canonical Linux CPU runtime; padded visual ROI and heatmap assets deliberately have no checksum baseline because their geometry includes presentation-only context.",
+  "examples": {
+    "norm-axial.jpg": {
+      "plane": "axial",
+      "roi": [303, 283, 724, 678],
+      "quality_score": 0.7664,
+      "assessment_category": "no_expressed_signal",
+      "assessment_score": 0.0784,
+      "exact_roi_checksum": "380118605518b50717e55fecacd75a31d6fed425c1e352ccb44da7f718dadaeb",
+      "exact_heatmap_checksum": "29a96277c39e02c8d160c08863fd5933b4c88b08de6d7fc6b077026d3c6ff0ac",
+      "assets": {
+        "original": {"dimensions": [1136, 852], "checksum": "0d8096f55403c234a65778ebccb9c87fd35a1fcd0920b143f474a82a8c5dd674"},
+        "roi": {"dimensions": [507, 475]},
+        "heatmap": {"dimensions": [507, 475]}
+      }
+    },
+    "norm-sagittal.jpg": {
+      "plane": "sagittal",
+      "roi": [77, 369, 517, 796],
+      "quality_score": 0.8130,
+      "assessment_category": "no_expressed_signal",
+      "assessment_score": 0.0736,
+      "exact_roi_checksum": "419ead6d5809b9156d38d7c988bd04cd5cfcdd6e269d9d77ae94217d9be8e17a",
+      "exact_heatmap_checksum": "d25aa25daf522a63edbbef3b175059a96c3bcd492a96c7e0300144167407190e",
+      "assets": {
+        "original": {"dimensions": [1136, 852], "checksum": "1d5c48fdd54ca1e1421dd48376932648bb2d27c7b72295b7cdf8d4aeec789e2a"},
+        "roi": {"dimensions": [528, 513]},
+        "heatmap": {"dimensions": [528, 513]}
+      }
+    },
+    "patology-axial.jpg": {
+      "plane": "axial",
+      "roi": [228, 175, 582, 492],
+      "quality_score": 0.6615,
+      "assessment_category": "attention_required",
+      "assessment_score": 0.8346,
+      "exact_roi_checksum": "736743892ce5840bddc16edf4b76410b6ccd6776d5625d8b36d3b05b58df8895",
+      "exact_heatmap_checksum": "9affa118182780930cd2f3def0df1076e6c6dccf18bf9967455b9b42ef0dcb89",
+      "assets": {
+        "original": {"dimensions": [960, 720], "checksum": "572288ceef5c57bd8af5cde198d421cc521dc45300f60049b0410425f3e776cb"},
+        "roi": {"dimensions": [426, 381]},
+        "heatmap": {"dimensions": [426, 381]}
+      }
+    },
+    "patology-sagittal.jpg": {
+      "plane": "sagittal",
+      "roi": [577, 190, 900, 514],
+      "quality_score": 0.2445,
+      "assessment_category": "attention_required",
+      "assessment_score": 0.9952,
+      "exact_roi_checksum": "5294e8c1315b579dd69d0d8101bd72cd585a8cc18d932e7338ef1c27f22aa032",
+      "exact_heatmap_checksum": "a7c88db552c947c97a56ed15b7aa0019df59bc512a294c5e2cb59b7992d11bbe",
+      "assets": {
+        "original": {"dimensions": [1136, 852], "checksum": "46c2ce05c541a7a61052af42dc6e3de2458e01a75dc9880e394513c4683e0885"},
+        "roi": {"dimensions": [389, 390]},
+        "heatmap": {"dimensions": [389, 390]}
+      }
+    }
+  }
+}
