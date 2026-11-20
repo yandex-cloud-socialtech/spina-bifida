@@ -1,0 +1,268 @@
+{
+  "app": {
+    "product": "Spina Bifida",
+    "service": "Research service",
+    "workspaceLabel": "Analysis workspace"
+  },
+  "partners": {
+    "label": "Partner organisations",
+    "yandexCloud": "Yandex Cloud",
+    "spinaBifidaFoundation": "Spina Bifida Charity Foundation",
+    "kulakovCenter": "Kulakov National Medical Research Center"
+  },
+  "locale": {
+    "label": "Language",
+    "ru": "Русский",
+    "en": "English",
+    "kk": "Қазақша",
+    "uz": "O‘zbekcha"
+  },
+  "theme": {
+    "label": "Theme",
+    "dark": "Dark",
+    "light": "Light"
+  },
+  "model": {
+    "label": "Model",
+    "v1": "v1",
+    "v2": "v2"
+  },
+  "auth": {
+    "loginTitle": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "submitting": "Signing in…",
+    "logout": "Sign out",
+    "profile": "Profile"
+  },
+  "terms": {
+    "title": "Terms of use",
+    "intro": "To continue using our service, please take a moment to read and accept our terms of use.",
+    "sections": {
+      "purpose": {"title": "1. Purpose of the service", "body": "This web service is an artificial intelligence-based tool developed exclusively for scientific, educational, and research purposes. It is not a registered medical device, does not have the status of a clinical diagnostic tool, and is not intended for diagnosis, patient monitoring, or clinical decision-making."},
+      "audience": {"title": "2. Intended audience", "body": "The service is intended only for qualified specialists in ultrasound diagnostics, perinatology, and related medical disciplines who have the appropriate education and experience. Access to and use of the service by persons without medical education is prohibited."},
+      "liability": {"title": "3. Limitation of liability", "efforts": "The service authors make every reasonable effort to ensure the accuracy and relevance of the analysis algorithms. However, AI results may be limited by the quality of the input data, image characteristics, and current technological capabilities.", "results": "The analysis results provided by the service are not a medical opinion, diagnosis, or recommendation.", "consultation": "No information from the service should be used as a substitute for consultation with a treating physician or another qualified healthcare professional."},
+      "data": {"title": "4. Data processing", "deidentify": "• Uploading images containing patients' personal data (full name, date of birth, study numbers, and so on) is prohibited.", "feedback": "• Only images and data for which the user voluntarily provided feedback are retained in order to further improve the quality of the AI model.", "logging": "• All user actions in the system are logged for security, audit, and technical support purposes.", "disclosure": "• No data are transferred to third parties without the user's consent, except where required by law."},
+      "consent": {"title": "5. User consent", "intro": "By using this service, you confirm that you:", "notice": "• Have read this disclaimer;", "specialist": "• Are a medical professional authorized to work with medical data;", "decisions": "• Do not use the service to make clinical decisions;", "data": "• Agree to the data processing terms stated above."}
+    },
+    "important": "❗ Important: The service result is a preliminary assessment that requires interpretation and confirmation by a qualified physician. The treating specialist is responsible for the final conclusion.",
+    "accept": "I’ve read and agree to the terms and conditions above"
+  },
+  "access": {
+    "forbiddenTitle": "Insufficient permissions",
+    "forbiddenBody": "This section is available to administrators only."
+  },
+  "serviceBadge": {
+    "ready": "Service available",
+    "research": "Research use only"
+  },
+  "analysis": {
+    "title": "Image analysis",
+    "intro": "Add one to ten de-identified ultrasound frames.",
+    "upload": "Upload images",
+    "dropTitle": "Drop ultrasound frames here",
+    "dropHint": "JPEG or PNG, up to ten frames",
+    "frames": "Frames",
+    "frame": "Frame {{count}}",
+    "frameCounter": "{{count}} of 10",
+    "frameProgress": "{{count}}%",
+    "selectFrame": "Select frame {{count}}",
+    "removeFrame": "Remove frame {{count}}",
+    "start": "Start analysis",
+    "retry": "Retry analysis",
+    "retryCleanup": "Retry cleanup",
+    "replace": "Replace",
+    "clear": "Clear",
+    "remove": "Remove",
+    "loadExamples": "Open examples",
+    "viewer": "Image viewer",
+    "viewerControls": "Viewer controls",
+    "zoomOut": "Zoom out",
+    "zoomIn": "Zoom in",
+    "zoomPercent": "Zoom {{count}}%",
+    "fitImage": "Fit",
+    "preparation": "Preparation",
+    "guidanceTitle": "What to upload",
+    "guidanceSagittal": "A sagittal frame of the fetal spine",
+    "guidanceAxial": "An axial frame of the fetal head",
+    "deidentifyWarning": "Do not upload frames containing names or other patient identifiers.",
+    "errorRemediation": "Check the file and try again; frames already added are preserved.",
+    "duplicateRemediation": "This frame is already in the list. Choose another file or remove the existing frame; you do not need to upload the whole batch again.",
+    "processingHint": "Keep this page open until processing is complete.",
+    "progress": "Analysis progress",
+    "batchCompleted": "Completed {{completed}} of {{total}}",
+    "batchActive": "Processing: {{count}}",
+    "batchQueued": "Queued: {{count}}",
+    "batchProgress": "Batch progress: {{count}}%",
+    "queuePosition": "Queue position: {{count}}",
+    "newAnalysis": "New study",
+    "layers": {
+      "label": "Image layer",
+      "original": "Original",
+      "roi": "Region of interest",
+      "heatmap": "Heatmap",
+      "roiUnavailable": "The region-of-interest image is unavailable for this frame.",
+      "heatmapUnavailable": "The heatmap is unavailable for this frame."
+    },
+    "states": {
+      "submitting": "Uploading images",
+      "queued": "Queued",
+      "validating": "Checking files",
+      "quality_check": "Checking quality",
+      "plane_detection": "Detecting plane",
+      "roi_detection": "Locating region of interest",
+      "scoring": "Calculating score",
+      "explanation": "Preparing explanation",
+      "completed": "Analysis complete",
+      "rejected_quality": "Insufficient quality",
+      "failed_recoverable": "Technical error",
+      "expired": "Materials removed by retention policy",
+      "deleted": "Study deleted"
+    },
+    "result": {
+      "qualityHeading": "Quality",
+      "planeHeading": "Plane",
+      "assessmentHeading": "Pathology indicators",
+      "qualitySatisfactory": "Satisfactory",
+      "qualityUnsatisfactory": "Unsatisfactory",
+      "pathologyDetected": "Detected",
+      "pathologyNotDetected": "Not detected",
+      "notDetermined": "Not determined",
+      "probabilityNote": "This is not the probability of a diagnosis."
+    }
+  },
+  "medical": {
+    "axial": "Axial",
+    "sagittal": "Sagittal",
+    "unknown": "Plane undetermined"
+  },
+  "feedback": {
+    "title": "Feedback",
+    "positive": "Result is useful",
+    "negative": "Review required",
+    "comment": "Comment",
+    "submit": "Submit",
+    "sent": "Feedback submitted"
+  },
+  "admin": {
+    "title": "Users",
+    "eyebrow": "Administration",
+    "intro": "Create local accounts and manage access to the service.",
+    "create": "Add user",
+    "email": "Email",
+    "userEmail": "User email",
+    "temporaryPassword": "Temporary password",
+    "role": "Role",
+    "locale": "Language",
+    "userLocale": "User language",
+    "status": "Status",
+    "actions": "Actions",
+    "listTitle": "User list",
+    "tableLabel": "Service users",
+    "loading": "Loading users…",
+    "listError": "Users could not be loaded.",
+    "empty": "There are no users yet.",
+    "active": "Active",
+    "blocked": "Blocked",
+    "block": "Block",
+    "unblock": "Unblock",
+    "blockUser": "Block {{email}}",
+    "unblockUser": "Unblock {{email}}",
+    "delete": "Delete user",
+    "deleteUser": "Delete {{email}}",
+    "confirmDeleteTitle": "Delete user?",
+    "confirmDelete": "The {{email}} account will be removed and will no longer be able to sign in.",
+    "roles": {"user": "User", "admin": "Administrator"},
+    "statuses": {"active": "Active", "blocked": "Blocked", "deleted": "Deleted", "pending_email": "Awaiting email verification", "pending": "Awaiting moderation", "rejected": "Rejected"},
+    "success": {
+      "created": "User added",
+      "blocked": "User blocked",
+      "unblocked": "User unblocked",
+      "deleted": "User deleted",
+      "approved": "Registration approved and the user notified by email.",
+      "rejected": "Registration rejected and the user notified by email."
+    },
+    "panel": "Admin panel",
+    "approve": "Approve",
+    "reject": "Reject",
+    "approveUser": "Approve {{email}}",
+    "rejectUser": "Reject {{email}}"
+  },
+  "errors": {
+    "authentication_required": "Sign in to continue.",
+    "invalid_credentials": "Incorrect email or password.",
+    "rate_limited": "Too many attempts. Try again later.",
+    "csrf_failed": "Your session has expired. Refresh the page.",
+    "network_error": "The service cannot be reached.",
+    "local_storage_full": "There is not enough space for a new analysis.",
+    "unsupported_format": "This file format is not supported.",
+    "image_too_large": "The file exceeds the allowed size.",
+    "image_decode_failed": "The image could not be read.",
+    "duplicate_image": "This frame has already been added.",
+    "too_many_frames": "You can add no more than ten frames.",
+    "invalid_analysis_response": "The analysis service returned an invalid response.",
+    "delete_failed": "The study could not be deleted. Try again.",
+    "example_unavailable": "The example could not be loaded.",
+    "analysis_not_found": "Study not found.",
+    "inference_timeout": "The analysis took too long.",
+    "inference_failed": "The analysis could not be completed.",
+    "email_exists": "A user with this email already exists.",
+    "self_block_forbidden": "You cannot block your own account.",
+    "last_active_admin": "The last active administrator cannot be changed.",
+    "invalid_user": "Check your email address and password (12 to 256 characters).",
+    "user_not_found": "User not found.",
+    "admin_required": "Administrator access is required.",
+    "unknown": "A technical error occurred.",
+    "invalid_token": "This link is invalid, expired or already used. Request a new email.",
+    "current_password_invalid": "The current password is incorrect.",
+    "password_mismatch": "Passwords do not match.",
+    "mail_unavailable": "Unable to send email. Please try again later."
+  },
+  "common": {
+    "loading": "Loading…",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close",
+    "or": "or"
+  },
+  "account": {
+    "navigation": "Account navigation",
+    "backToLogin": "Sign in",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "passwordHint": "Use 12 to 256 characters.",
+    "register": {
+      "title": "Register",
+      "intro": "Verify your email, then wait for administrator approval. You cannot sign in before approval.",
+      "action": "Register",
+      "success": "If registration is available, a verification link has been sent. Check your inbox and spam folder. Use this form to resend."
+    },
+    "forgot-password": {
+      "title": "Forgot password?",
+      "intro": "Enter your account email address.",
+      "action": "Send reset link",
+      "success": "If an active account exists, a password reset link has been sent to its email address."
+    },
+    "verify-email": {
+      "title": "Verify email",
+      "intro": "Press the button to verify the address from the email.",
+      "action": "Verify email",
+      "success": "Email verified. Your request is awaiting moderation. You will receive an email when approved and can then sign in."
+    },
+    "reset-password": {
+      "title": "Reset password",
+      "intro": "Choose a new password. The link expires in 30 minutes and can be used once.",
+      "action": "Save password",
+      "success": "Password changed. Sign in using your new password."
+    },
+    "change-password": {
+      "title": "Change password",
+      "intro": "Enter your current and new passwords. All devices will require a new sign-in.",
+      "action": "Change password",
+      "success": "Password changed. Sign in using your new password."
+    }
+  }
+}

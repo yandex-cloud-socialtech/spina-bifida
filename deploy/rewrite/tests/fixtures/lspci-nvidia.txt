@@ -1,0 +1,1 @@
+01:00.0 VGA compatible controller: NVIDIA Corporation Device 28b8 (rev a1)

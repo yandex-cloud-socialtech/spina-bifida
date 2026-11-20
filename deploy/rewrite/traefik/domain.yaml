@@ -1,0 +1,52 @@
+# Installer replaces example.invalid with the configured domain in its runtime copy.
+http:
+  routers:
+    redirect-https:
+      rule: Host(`example.invalid`)
+      entryPoints: [web]
+      service: frontend
+      middlewares: [redirect-https]
+    api-https:
+      rule: Host(`example.invalid`) && (PathPrefix(`/api/`) || PathPrefix(`/health/`))
+      entryPoints: [websecure]
+      service: api
+      priority: 100
+      middlewares: [request-limit, security]
+      tls:
+        certResolver: letsencrypt
+    frontend-https:
+      rule: Host(`example.invalid`) && PathPrefix(`/`)
+      entryPoints: [websecure]
+      service: frontend
+      priority: 1
+      middlewares: [security]
+      tls:
+        certResolver: letsencrypt
+
+  services:
+    api:
+      loadBalancer:
+        servers:
+          - url: http://api:8000
+    frontend:
+      loadBalancer:
+        servers:
+          - url: http://frontend:8080
+
+  middlewares:
+    redirect-https:
+      redirectScheme:
+        scheme: https
+        permanent: true
+    request-limit:
+      buffering:
+        maxRequestBodyBytes: 22020096
+        memRequestBodyBytes: 2097152
+    security:
+      headers:
+        contentTypeNosniff: true
+        frameDeny: true
+        referrerPolicy: no-referrer
+        permissionsPolicy: camera=(), microphone=(), geolocation=()
+        stsSeconds: 31536000
+        stsIncludeSubdomains: true

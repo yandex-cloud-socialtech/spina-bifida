@@ -1,0 +1,36 @@
+http:
+  routers:
+    api-http:
+      rule: PathPrefix(`/api/`) || PathPrefix(`/health/`)
+      entryPoints: [web]
+      service: api
+      priority: 100
+      middlewares: [request-limit, security]
+    frontend-http:
+      rule: PathPrefix(`/`)
+      entryPoints: [web]
+      service: frontend
+      priority: 1
+      middlewares: [security]
+
+  services:
+    api:
+      loadBalancer:
+        servers:
+          - url: http://api:8000
+    frontend:
+      loadBalancer:
+        servers:
+          - url: http://frontend:8080
+
+  middlewares:
+    request-limit:
+      buffering:
+        maxRequestBodyBytes: 22020096
+        memRequestBodyBytes: 2097152
+    security:
+      headers:
+        contentTypeNosniff: true
+        frameDeny: true
+        referrerPolicy: no-referrer
+        permissionsPolicy: camera=(), microphone=(), geolocation=()

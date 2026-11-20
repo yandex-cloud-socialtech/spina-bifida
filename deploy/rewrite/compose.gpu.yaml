@@ -1,0 +1,15 @@
+services:
+  worker:
+    image: ${BACKEND_GPU_IMAGE:-spina-bifida-backend:0.1.0-gpu}
+    build:
+      context: ../../apps/backend
+      target: runtime-gpu
+      args:
+        APP_VERSION: ${APP_VERSION:-0.1.0}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

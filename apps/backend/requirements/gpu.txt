@@ -1,0 +1,8 @@
+-r base.txt
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+grad-cam==1.5.5
+monai==1.5.1
+torch==2.7.1+cu128
+torchvision==0.22.1+cu128
+ultralytics==8.3.203

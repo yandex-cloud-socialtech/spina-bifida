@@ -1,186 +1,109 @@
-# Byte-compiled / optimized / DLL files
+# Local environments and tools
+.worktrees/
+.venv/
+venv/
+env/
+node_modules/
 __pycache__/
 *.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
+build/
+dist/
 .pytest_cache/
-cover/
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/#use-with-ide
-.pdm.toml
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-apps/user-app/.env
-service-account-key*.json
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
 .mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
-
-# Models
-models*/
-apps/user-app/models*/
-
-# Venv
-sb-venv/
-dsapp-venv/
-user-app-venv/
-form_data_*
-img_
-annotation_
-org_list.txt
-
-# Mac OS DS_Store
+.ruff_cache/
+.coverage*
+htmlcov/
+coverage.xml
+playwright-report/
+test-results/
+.ipynb_checkpoints/
 .DS_Store
+.idea/
+.vscode/
 
+# Secrets and local deployment state (templates are safe to track)
+.env
+.env.*
+!.env.example
+.postbox.env
+*.pem
+*.key
+service-account-key*.json
+deploy/rewrite/config/app.yaml
+deploy/rewrite/yc/config.json
+deploy/rewrite/yc/.state/
+apps/backend/requirements/wheels/
 
-user-app/models/axial_pathology.pt
-user-app/models/axial_quality.pt
-user-app/models/best_object_detection.pt
-user-app/models/sagittal_pathology.pt
-user-app/models/sagittal_quality.pt
-user-app/.env
+# Runtime and training data, manifests, annotations, logs and checkpoints
+data/
+.data/
+dataset/
+datasets/
+dataset_*/
+models/
+!deploy/rewrite/models/
+deploy/rewrite/models/*
+!deploy/rewrite/models/manifest.sha256
+!deploy/rewrite/models/source-url.txt
+!deploy/rewrite/models/README.md
+outputs/
+artifacts/
+checkpoints/
+runs/
+wandb/
+mlruns/
+tensorboard/
+logs/
+backups/
+*.log
+*.db
+*.sqlite*
+*.csv
+*.tsv
+*.parquet
+*.arrow
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+*.zip
+*.tar
+*.tar.gz
+*.tgz
 
+# Images: four medical examples, synthetic fixtures, logos and UI baselines only
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.bmp
+*.tif
+*.tiff
+!apps/frontend/public/examples/norm-axial.jpg
+!apps/frontend/public/examples/norm-sagittal.jpg
+!apps/frontend/public/examples/patology-axial.jpg
+!apps/frontend/public/examples/patology-sagittal.jpg
+!apps/frontend/src/assets/partners/kulakov-center.png
+!apps/frontend/e2e/visual.spec.ts-snapshots/*.png
+!apps/backend/tests/fixtures/images/corrupt.jpg
+!apps/backend/tests/fixtures/images/oversized.png
+!apps/backend/tests/fixtures/images/valid.jpg
+!apps/backend/tests/fixtures/images/valid.png
+!apps/backend/tests/fixtures/images/with_exif.jpg
 
-#Cursor
-.cursor/
+# Research excluded from the public application
+/training/
+/transformer/

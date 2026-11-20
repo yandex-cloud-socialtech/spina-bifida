@@ -1,0 +1,24 @@
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+api:
+  dashboard: false
+
+ping: {}
+
+entryPoints:
+  web:
+    address: :80
+  websecure:
+    address: :443
+
+providers:
+  file:
+    filename: /etc/traefik/dynamic/active.yaml
+    watch: true
+
+log:
+  level: INFO
+
+accessLog: {}

@@ -1,0 +1,11 @@
+schema_version: 1
+application_version: 0.1.0
+supported_platforms:
+  - ubuntu-22.04-amd64
+  - ubuntu-24.04-amd64
+images:
+  backend_cpu: REQUIRED_AT_BUILD_TIME
+  backend_gpu: REQUIRED_AT_BUILD_TIME
+  frontend: REQUIRED_AT_BUILD_TIME
+model_manifest: models/manifest.sha256
+entrypoint: install.sh
